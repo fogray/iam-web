@@ -1,6 +1,6 @@
 var I = {
 		//'DOMAIN' : '/demo'
-		'DOMAIN' : 'https://dev.imaicloud.com/iam-web'
+		'DOMAIN' : 'http://itm.inspursoft.com/iam-web'
 }
 
 Loader = (function() {
