@@ -2,7 +2,12 @@ var I = {
 		//'DOMAIN' : '/demo'
 		'DOMAIN' : 'http://itm.inspursoft.com/iam-web'
 }
-
+var CookieKeys = {
+	"expire": "imaicloud_expires",
+	"payload": "imaicloud_payload",
+	"algorithm":"imaicloud_md5",
+	"group":"imaicloud_role",
+}
 Loader = (function() {
 
   var load_cursor = 0;
