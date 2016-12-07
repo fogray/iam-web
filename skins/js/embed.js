@@ -65,8 +65,23 @@ function init() {
 	
 	importresource();
 	setCookie('itoken', 'eyJhbGciOiJOR0lOWE1ENSIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ3d3cuaW1haWNsb3VkLmNvbSIsImlzcyI6ImlhbS5pbnNwdXIuY29tIiwiZXhwIjoxNDc3OTkwODU4NDE4LCJpYXQiOjE0Nzc5ODkwNTg0MTgsImlkIjoiZEo1eXZvSEtTcXFGbUdfaFkxT2wzUSIsInVuYW1lIjoiMTExQHFxLmNvbSIsInVpZCI6IjExMUBxcS5jb20iLCJ0bnQiOiJGV3ZkMmk3ZFJRR3R6TWVDRkNIRzV3IiwiZ3JvdXAiOiIifQ.BQcKI3Y9jYq33_Uu4s8W6Q');
-	var itoken = getCookie("itoken");
 	
+	var itoken = getCookie("itoken");
+	if(itoken != "" && itoken != null) {
+		var tokenInfo = itoken.split(".");
+		if(tokenInfo.length != 3) {
+			login();
+		} else {
+			var payload = $.base64.decode(tokenInfo[1]);
+			var userInfo = JSON.parse(payload);
+			$("#username").text(userInfo.uname);
+			setCookie(CookieKeys.expire, userInfo.exp);
+			setCookie(CookieKeys.payload, tokenInfo[1]);
+			setCookie(CookieKeys.algorithm, tokenInfo[2]);
+			setCookie(CookieKeys.group, userInfo.group);
+		}
+		
+	}
 	var viewSucceed;
 	var viewSucceedArray = [];
 	if(itoken == "") {
