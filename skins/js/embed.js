@@ -1,6 +1,6 @@
 var I = {
 		//'DOMAIN' : '/demo'
-		'DOMAIN' : 'http://itm.inspursoft.com/iam-web'
+		'DOMAIN' : '//dev.imaicloud.com/iam-web'
 }
 var CookieKeys = {
 	"expire": "imaicloud_expires",
