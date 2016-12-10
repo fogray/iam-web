@@ -136,7 +136,7 @@ function importresource() {
 	}
 	//	I.DOMAIN + '/skins/js/bootstrap.js',
 	var jsArray = new Array(
-		I.DOMAIN + '/skins/js/jquery.js',
+		//I.DOMAIN + '/skins/js/jquery.js',
 		I.DOMAIN + '/skins/js/jquery.base64.js',
 		I.DOMAIN + '/skins/js/json.js',
 		I.DOMAIN + '/skins/js/iamui.js'
